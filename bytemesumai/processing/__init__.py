@@ -1,8 +1,5 @@
-# sumwiseai/processing module
-""""
-Processing module for SumWiseAI.
-
-This module provides higher-level document processing workflows that combine
-chunking and summarization.
+"""
+High-level document processors for ByteMeSumAI.
 """
 
+from bytemesumai.processing.document import DocumentProcessor

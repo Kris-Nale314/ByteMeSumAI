@@ -837,7 +837,7 @@ class ChunkingProcessor:
             
             # Extract strategy-specific params
             strategy_params = {k: v for k, v in strategy_config.items() 
-                              if k not in ["name", "strategy"]}
+                            if k not in ["name", "strategy"]}
             
             # Run chunking with this strategy
             strategy_result = self.chunk_document(
@@ -867,7 +867,7 @@ class ChunkingProcessor:
         Calculate comparative metrics between chunking strategies.
         
         Args:
-            strategy_results: Dictionary of strategy results
+            strategy_results: Dictionary of strategy results by name
             boundaries: List of detected document boundaries
             
         Returns:

@@ -1,10 +1,5 @@
 """
-Summarization module for ByteMeSumAI.
-
-This module provides functionality for generating different types of summaries
-from documents using LLMs.
+Document summarization functionality for ByteMeSumAI.
 """
 
-from bytemesumai.summarization.processor import SummarizationProcessor, SummaryResult
-
-__all__ = ['SummarizationProcessor', 'SummaryResult']
+from bytemesumai.summarization.processor import SummarizationProcessor, summarize

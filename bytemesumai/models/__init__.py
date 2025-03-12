@@ -1,1 +1,5 @@
-# sumwiseai/models module
+"""
+Document models for ByteMeSumAI.
+"""
+
+from bytemesumai.models.document import Document

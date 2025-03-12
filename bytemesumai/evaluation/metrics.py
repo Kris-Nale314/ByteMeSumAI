@@ -11,6 +11,8 @@ from typing import List, Dict, Any, Optional, Union
 import numpy as np
 
 from bytemesumai.llm.client import LLMClient
+from bytemesumai.chunking.models import Chunk, DocumentBoundary, ChunkingResult
+
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -307,8 +309,8 @@ def evaluate_accuracy(original_text: str, summary: str, use_llm: bool = False) -
 
 def evaluate_chunking(
     original_text: str,
-    chunks: List[Dict[str, Any]],
-    boundaries: Optional[List[Dict[str, Any]]] = None,
+    chunks: List[Union[Chunk, Dict[str, Any]]],
+    boundaries: Optional[List[Union[DocumentBoundary, Dict[str, Any]]]] = None,
     metrics: Optional[List[str]] = None
 ) -> Dict[str, Any]:
     """
@@ -316,8 +318,8 @@ def evaluate_chunking(
     
     Args:
         original_text: The original document text
-        chunks: List of chunk objects
-        boundaries: Optional list of detected document boundaries
+        chunks: List of Chunk objects or dictionaries
+        boundaries: Optional list of DocumentBoundary objects or dictionaries
         metrics: List of metrics to evaluate (default: all)
         
     Returns:
@@ -328,13 +330,34 @@ def evaluate_chunking(
     
     logger.info(f"Evaluating chunking with metrics: {metrics}")
     
+    # Helper function to handle both objects and dictionaries
+    def get_text(chunk):
+        if hasattr(chunk, 'text'):
+            return chunk.text
+        return chunk.get("text", "")
+    
+    def get_position(boundary):
+        if hasattr(boundary, 'position'):
+            return boundary.position
+        return boundary.get("position", 0)
+        
+    def get_start_idx(chunk):
+        if hasattr(chunk, 'start_idx'):
+            return chunk.start_idx
+        return chunk.get("start_idx", 0)
+        
+    def get_end_idx(chunk):
+        if hasattr(chunk, 'end_idx'):
+            return chunk.end_idx
+        return chunk.get("end_idx", 0)
+    
     results = {
         "chunk_count": len(chunks),
-        "avg_chunk_size": sum(len(c.get("text", "")) for c in chunks) / len(chunks) if chunks else 0,
+        "avg_chunk_size": sum(len(get_text(c)) for c in chunks) / len(chunks) if chunks else 0,
     }
     
     # Calculate chunk size statistics
-    chunk_sizes = [len(c.get("text", "")) for c in chunks]
+    chunk_sizes = [len(get_text(c)) for c in chunks]
     if chunk_sizes:
         results["min_chunk_size"] = min(chunk_sizes)
         results["max_chunk_size"] = max(chunk_sizes)
@@ -349,13 +372,13 @@ def evaluate_chunking(
     
     if "boundary_preservation" in metrics and boundaries:
         # Count how many boundaries fall in the middle of chunks vs. at edges
-        boundary_positions = [b.get("position", 0) for b in boundaries]
+        boundary_positions = [get_position(b) for b in boundaries]
         boundaries_broken = 0
         
         for pos in boundary_positions:
             for chunk in chunks:
-                start = chunk.get("start_idx", 0)
-                end = chunk.get("end_idx", 0)
+                start = get_start_idx(chunk)
+                end = get_end_idx(chunk)
                 
                 # Check if boundary falls inside this chunk (but not at edges)
                 if (start < pos < end - 1 and
@@ -392,8 +415,8 @@ def evaluate_chunking(
             # Count broken sentences
             for start_pos in sentence_starts:
                 for chunk in chunks:
-                    chunk_start = chunk.get("start_idx", 0)
-                    chunk_end = chunk.get("end_idx", 0)
+                    chunk_start = get_start_idx(chunk)
+                    chunk_end = get_end_idx(chunk)
                     
                     if chunk_start < start_pos < chunk_end - 10:  # Sentence starts mid-chunk
                         sentence_breaks += 1
