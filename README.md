@@ -1,229 +1,244 @@
+<p align="center">
+  <img src="docs/images/logo.svg" alt="ByteMeSumAI Logo" width="400"/>
+</p>
+
+
 # ByteMeSumAI
 
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![Python](https://img.shields.io/badge/python-3.8%2B-blue)
 ![Development Status](https://img.shields.io/badge/status-alpha-orange)
 
-**Intelligent document processing with advanced chunking and summarization for the AI era.**
+**Building Blocks for Robust and Context-Aware Retrieval-Augmented Generation**
 
-## 🚀 Overview
+## 🧩 Technical Overview
 
-SumWiseAI tackles one of the most critical challenges in building effective AI solutions: **processing long, unstructured documents**. It's not just a summarization tool - it's an essential component in your RAG (Retrieval-Augmented Generation) pipeline that transforms how your AI systems handle complex documents.
+ByteMeSumAI is a toolkit for developers and technical practitioners implementing Retrieval-Augmented Generation (RAG) systems. It addresses critical document architecture challenges that impact RAG performance, offering specialized components for semantic document processing, context preservation, and intelligent content extraction.
 
-**The hard truth**: Your AI solution is only as good as the data foundation it's built upon. Traditional document processing approaches break down when faced with lengthy, complex documents that span multiple topics, entities, and timelines.
+This library provides the infrastructure necessary to transform raw documents into contextually rich, semantically structured inputs for downstream RAG systems - a foundational requirement for context-aware AI applications.
 
-SumWiseAI changes the game by implementing:
+## 🔬 Technical Architecture
 
-- **Boundary-Aware Chunking**: Intelligently splits documents at natural semantic boundaries, not arbitrary character counts
-- **Multi-Strategy Summarization**: Applies different summarization approaches based on document complexity
-- **Entity and Temporal Analysis**: Tracks key entities and chronological information across document sections
-- **Hierarchical Processing**: Maintains context across document sections for coherent understanding
+ByteMeSumAI follows a modular architecture designed around core document processing principles:
 
-## 💡 Why Your Data Strategy Matters
+```
+ByteMeSumAI
+├── Chunking Engine        # Document segmentation with semantic awareness
+├── Summarization Engine   # Multi-strategy content distillation
+├── Document Processors    # Hierarchical document handling
+├── Entity Tracking        # Cross-document entity reference management
+└── Evaluation Framework   # Quantitative assessment of output quality
+```
 
-In the rush to deploy LLM solutions, many teams overlook a fundamental truth: **document processing is not a commodity**. The way you chunk, summarize, and represent documents directly impacts:
+## 🧠 Core Technical Capabilities
 
-- Retrieval accuracy
-- Context retention
-- Hallucination reduction
-- Computational efficiency
-- User experience
+### Chunking Techniques
 
-SumWiseAI is built on the principle that **your data strategy is as important as your solution architecture**. It provides the tools to transform raw documents into structured, coherent, and contextually rich inputs for your AI systems.
-
-## 🔍 Key Features
-
-- **Intelligent Chunking**:
-  - Fixed-size chunking (baseline)
-  - Boundary-aware chunking (detects natural boundaries)
-  - Semantic chunking (preserves meaning)
-
-- **Multi-Strategy Summarization**:
-  - Basic summarization (concise, detailed, narrative)
-  - Extractive summarization (key sentences)
-  - Entity-focused summarization (key entities)
-  - Temporal summarization (chronological information)
-
-- **Advanced Processing**:
-  - Hierarchical document handling
-  - Entity tracking across document sections
-  - Cross-reference preservation
-  - Context window optimization
-
-- **Practical Tools**:
-  - Document loading utilities
-  - Report generation
-  - Evaluation metrics
-  - Framework integration
-
-## 🏗️ Use Cases
-
-### Enterprise Document Processing
-
-Process long corporate documents like:
-- Earnings call transcripts
-- Annual reports
-- Technical documentation
-- Legal contracts
+- **Fixed-Size Chunking**: Baseline implementation with configurable chunk size and overlap parameters
+- **Boundary-Aware Chunking**: Detects natural document boundaries (section breaks, topic shifts, format changes) to preserve semantic coherence 
+- **Sentence-Preserving Algorithms**: Prevents sentence fragmentation that leads to context loss in RAG retrieval
+- **Structure Preservation**: Maintains document hierarchies and relational elements, critical for agentic RAG's contextual understanding
+- **[Planned] Semantic Chunking**: Future support for adaptive, content-aware segmentation that responds to document complexity
 
 ```python
-from sumwiseai import Document, DocumentProcessor
+from bytemesumai import chunk
 
-# Load an earnings call transcript
-doc = Document.from_file("q4_earnings_call.txt")
+# Configurable chunking parameters
+chunks = chunk(
+    document,
+    strategy="boundary_aware",
+    min_chunk_size=200,
+    max_chunk_size=1500
+)
+```
 
-# Process with intelligent chunking and summarization
+### Summarization Methods
+
+- **Basic Summarization**: Configurable concise/detailed summarization with length constraints
+- **Extractive Summarization**: Identifies and preserves key sentences with statistical significance
+- **Entity-Focused Summarization**: Maintains entity context across document sections, mitigating "entity amnesia" in RAG systems
+- **Temporal Summarization**: Preserves chronological relationships, crucial for time-sensitive inference tasks
+- **Multi-Document Summarization**: Synthesizes information across document sets while maintaining source attribution
+- **Contrastive Summarization**: Highlights differences between documents, enabling comparative analysis
+
+```python
+from bytemesumai import summarize
+
+# Entity-focused summarization that tracks key entities
+summary = summarize(
+    document,
+    strategy="entity_focused",
+    entities=["Company X", "Technology Y", "Regulation Z"]
+)
+```
+
+### Document Processing Framework
+
+- **Hierarchical Processing**: Multi-stage pipeline that maintains document structure hierarchy
+- **Contextual Interlinking**: Preserves cross-references between document sections
+- **Semantic Metadata Generation**: Creates structured metadata for improved RAG retrieval precision
+- **Document Architecture Analysis**: Quantifies document complexity across multiple dimensions (entities, temporal scope, structural features)
+
+```python
+from bytemesumai import DocumentProcessor
+
 processor = DocumentProcessor()
 results = processor.process_document(
     document=doc,
     chunking_strategy="boundary_aware",
-    summarization_strategies=["basic", "entity_focused"]
+    summarization_strategies=["basic", "entity_focused", "temporal"],
+    preserve_structure=True
 )
 ```
 
-### RAG Enhancement
+### Evaluation Metrics
 
-Supercharge your RAG pipeline with advanced document handling:
+- **Boundary Preservation Assessment**: Quantifies integrity of document structure boundaries
+- **Entity Coverage Analysis**: Measures entity representation and context preservation
+- **Summary Quality Metrics**: Evaluates completeness, conciseness, accuracy and coherence
+- **Temporal Coherence Analysis**: Assesses preservation of chronological structure
+- **Cross-Document Reference Integrity**: Evaluates maintenance of inter-document dependencies
 
 ```python
-# Traditional RAG breaks context on long documents
-# SumWiseAI preserves semantic structure
-from sumwiseai import chunk, summarize
+from bytemesumai import evaluate_summary
 
-# Intelligent chunking that respects document structure
-chunks = chunk(document, strategy="boundary_aware")
-
-# Generate targeted summaries for each chunk
-summaries = [summarize(chunk.text, strategy="entity_focused") for chunk in chunks]
-
-# Use in your RAG pipeline
-for chunk, summary in zip(chunks, summaries):
-    knowledge_base.add(
-        text=chunk.text,
-        metadata={"summary": summary.summary, "entities": summary.metadata["entities"]}
-    )
+evaluation = evaluate_summary(
+    original_text=document,
+    summary=summary,
+    metrics=["completeness", "accuracy", "coherence"]
+)
 ```
 
-### Research and Analysis
+## 📊 Agentic RAG Integration Points
 
-Extract insights from complex academic or research documents:
+ByteMeSumAI is designed as a foundation for agentic RAG systems, with specific technical integration points:
+
+| ByteMeSumAI Component | Agentic RAG Principle | Technical Integration |
+|-----------------|-----------------|----------------------|
+| Boundary-Aware Chunking | Document Structure Awareness | Preserves semantic boundaries for context-sensitive retrieval |
+| Entity-Focused Summarization | Entity Tracking | Maintains entity context across document sections |
+| Hierarchical Processing | Multi-Scale Context | Enables both local and global document understanding |
+| Temporal Summarization | Chronological Coherence | Preserves time-based relationships in knowledge representation |
+| Structure Preservation | Contextual Interlinking | Maintains cross-references for coherent reasoning |
+
+## 🔍 Technical Implementation Examples
+
+### Document Architecture Analysis for RAG Optimization
 
 ```python
-from sumwiseai import Document, process_document
+from bytemesumai import Document, DocumentProcessor
 
-# Load a complex research paper
-paper = Document.from_file("research_paper.pdf")
+# Load a complex document
+doc = Document.from_file("technical_specification.pdf")
 
-# Process with focus on entities and temporal information
-results = process_document(
-    paper,
-    chunking_strategy="semantic",
-    summarization_strategies=["entity_focused", "temporal"]
+# Process with comprehensive analysis
+processor = DocumentProcessor()
+results = processor.process_document(doc)
+
+# Extract document architecture metrics
+architecture = results["document_info"]
+print(f"Entity Complexity: {architecture['entity_complexity']}")
+print(f"Temporal Scope: {architecture['temporal_scope']}")
+print(f"Structural Complexity: {architecture['structural_complexity']}")
+
+# Use metrics to optimize RAG parameters
+if architecture["entity_complexity"] > 0.7:
+    # Recommend entity-focused chunking for complex entity documents
+    print("Recommended: Entity-focused chunking with smaller chunk sizes")
+```
+
+### Multi-Strategy Summarization for Comprehensive Document Understanding
+
+```python
+from bytemesumai import Document, DocumentProcessor
+from bytemesumai.reporting import MarkdownReporter
+
+# Load an earnings transcript
+doc = Document.from_file("earnings_call.txt")
+
+# Apply multiple summarization strategies
+processor = DocumentProcessor()
+results = processor.process_document(
+    document=doc,
+    summarization_strategies=[
+        "basic",          # For general overview
+        "entity_focused", # For key entity tracking
+        "temporal",       # For chronological events
+        "extractive"      # For key statements
+    ]
 )
 
-# Extract key research entities
-entities = results["summarization_result"]["entity_focused"]["entities"]
-print(f"Key research entities: {entities}")
+# Generate comprehensive report
+reporter = MarkdownReporter()
+report = reporter.generate_report(results)
 ```
 
-## 📊 The SumWiseAI Advantage
+### Boundary-Aware Chunking for RAG Systems
 
-| Challenge | Traditional Approach | SumWiseAI Approach |
-|-----------|----------------------|-------------------|
-| Long documents | Fixed-size chunking breaks context | Boundary-aware chunking preserves semantic structure |
-| Multiple topics | Context mixing across unrelated sections | Topic-aware processing maintains separation |
-| Entity tracking | Entities fragmented across chunks | Entity-focused summarization tracks across document |
-| Temporal sequences | Chronological information lost | Temporal summaries preserve time-based relationships |
-| Structure preservation | Document structure ignored | Format-aware processing respects original structure |
+```python
+from bytemesumai import Document, chunk
+from bytemesumai.chunking import ChunkingProcessor, compute_chunking_metrics
 
-## 🌱 Getting Started
+# Load a long document
+doc = Document.from_file("research_paper.pdf")
 
+# Create chunking processor with customized parameters
+processor = ChunkingProcessor(
+    boundary_detection_threshold=0.75,
+    default_chunk_overlap=100
+)
 
+# Apply different chunking strategies
+fixed_chunks = processor.chunk_text_fixed_size(doc.content)
+boundary_chunks = processor.chunk_text_boundary_aware(doc.content)
+semantic_chunks = processor.chunk_text_semantic(doc.content)
 
-```
-sumwiseai/
-├── src/
-│   └── sumwiseai/
-│       ├── __init__.py                 # Package initialization
-│       ├── llm/
-│       │   ├── __init__.py
-│       │   ├── client.py               # Provider-agnostic LLM client
-│       │   └── providers/              # Provider implementations
-│       │       ├── __init__.py
-│       │       └── base.py             # Base provider interface
-│       ├── chunking/
-│       │   ├── __init__.py
-│       │   ├── processor.py            # Main chunking processor
-│       │   ├── fixed.py                # Fixed-size chunking
-│       │   ├── boundary.py             # Boundary-aware chunking
-│       │   ├── semantic.py             # Semantic chunking
-│       │   └── models.py               # Chunk and Boundary models
-│       ├── summarization/
-│       │   ├── __init__.py
-│       │   ├── processor.py            # Main summarization processor
-│       │   ├── basic.py                # Basic summarization
-│       │   ├── extractive.py           # Extractive summarization
-│       │   ├── entity.py               # Entity-focused summarization
-│       │   ├── temporal.py             # Temporal summarization
-│       │   └── models.py               # Summary result models
-│       ├── processing/
-│       │   ├── __init__.py
-│       │   ├── document.py             # Document processor
-│       │   └── hierarchical.py         # Hierarchical processing
-│       ├── loaders/
-│       │   ├── __init__.py
-│       │   └── document.py             # Document loader
-│       ├── reporting/
-│       │   ├── __init__.py
-│       │   ├── markdown.py             # Markdown reporter
-│       │   └── evaluation.py           # Evaluation utilities
-│       ├── utils/
-│       │   ├── __init__.py
-│       │   ├── cache.py                # Caching utilities
-│       │   └── metrics.py              # Evaluation metrics
-│       └── models/
-│           ├── __init__.py
-│           └── document.py             # Document model
-├── tests/                              # Test suite
-│   ├── unit/                           # Unit tests
-│   ├── integration/                    # Integration tests
-│   └── fixtures/                       # Test fixtures
-├── examples/                           # Example scripts
-│   ├── basic_summarization.py
-│   ├── boundary_aware_chunking.py
-│   └── notebooks/                      # Jupyter notebooks
-├── docs/                               # Documentation
-├── pyproject.toml                      # Package configuration
-├── LICENSE                             # License file
-└── README.md                           # This file
+# Compare chunking effectiveness
+fixed_metrics = compute_chunking_metrics(fixed_chunks, doc.content)
+boundary_metrics = compute_chunking_metrics(boundary_chunks, doc.content)
+semantic_metrics = compute_chunking_metrics(semantic_chunks, doc.content)
+
+print(f"Boundary preservation score (fixed): {fixed_metrics['boundary_preservation_score']:.2f}")
+print(f"Boundary preservation score (boundary-aware): {boundary_metrics['boundary_preservation_score']:.2f}")
+print(f"Boundary preservation score (semantic): {semantic_metrics['boundary_preservation_score']:.2f}")
 ```
 
+## 🧪 Technical Design Principles
 
-### Installation
+ByteMeSumAI follows these core technical design principles:
+
+1. **Modular Components**: Each component functions independently while integrating seamlessly within the RAG pipeline
+2. **Evaluation-Driven**: All methods include rigorous evaluation metrics for quantitative assessment
+3. **Context Preservation**: Maintaining semantic relationships is prioritized over processing efficiency
+4. **Provider-Agnostic**: Interfaces with multiple LLM providers through a unified abstraction layer
+5. **Algorithmic Transparency**: Implementation details are explicitly documented for technical users
+
+## 🔧 Installation & Requirements
 
 ```bash
-pip install sumwiseai
+pip install bytemesumai
 ```
 
-### Quick Start
+**Dependencies:**
+- Python 3.8+
+- NLTK for linguistic processing
+- LiteLLM for provider-agnostic LLM access
+- NumPy for statistical analysis
 
-```python
-from sumwiseai import summarize, chunk
+## 🚧 Development Roadmap
 
-# Simple document summarization
-summary = summarize("This is a long document that contains important information...")
-print(summary.summary)
+- [x] Core document models
+- [x] Basic chunking strategies
+- [x] Fundamental summarization methods
+- [ ] Advanced semantic chunking
+- [ ] Comprehensive evaluation framework
+- [ ] Multi-document relationship tracking
+- [ ] Integration with vector database systems
+- [ ] Parallelized processing for large document collections
 
-# Intelligent chunking
-chunks = chunk(long_document, strategy="boundary_aware")
-print(f"Document divided into {len(chunks)} semantic chunks")
-```
+## 📚 Technical Documentation
 
-For detailed examples, check the [examples](./examples) directory.
-
-## 🚧 Project Status
-
-SumWiseAI is currently in **alpha stage**. While the core functionality is available and useful, we're actively enhancing the library based on real-world usage and feedback.
+For detailed API documentation, technical specifications, and implementation examples, see the [/docs](/docs) directory.
 
 ## 📄 License
 
@@ -232,7 +247,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 <p align="center">
-<strong>Your AI is only as good as the documents it processes.</strong><br>
-Make document processing a strategic advantage with SumWiseAI.
+<strong>Document architecture is the foundation of effective RAG systems.</strong><br>
+ByteMeSumAI: Building the blocks for semantically-aware document processing.
 </p>
-
