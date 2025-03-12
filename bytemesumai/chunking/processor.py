@@ -1,3 +1,5 @@
+# Copyright (c) 2025 Kris Naleszkiewicz
+# Licensed under the MIT License - see LICENSE file for details
 """
 Processor for document chunking in ByteMeSumAI.
 
@@ -20,6 +22,14 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 # Ensure NLTK resources are available
+try:
+    import nltk
+except ImportError:
+    raise ImportError(
+        "The 'nltk' package is required for ByteMeSumAI. "
+        "Please install it using 'pip install nltk'."
+    )
+
 try:
     nltk.data.find('tokenizers/punkt')
 except LookupError:

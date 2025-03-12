@@ -1,3 +1,5 @@
+# Copyright (c) 2025 Kris Naleszkiewicz
+# Licensed under the MIT License - see LICENSE file for details
 """
 Evaluation metrics for ByteMeSumAI.
 
