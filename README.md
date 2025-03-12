@@ -1,4 +1,6 @@
-![ByteMeSumAI Logo](docs/images/logo.svg)
+<p align="center">
+  <img src="docs/images/logo.svg" alt="ByteMeSumAI Logo" width="200"/>
+</p>
 
 
 # ByteMeSumAI
