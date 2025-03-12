@@ -6,7 +6,7 @@ Generation (RAG) systems, focusing on document architecture awareness, context
 preservation, and multi-strategy summarization.
 """
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 # Import main classes and functions for easier access
 from bytemesumai.models.document import Document
