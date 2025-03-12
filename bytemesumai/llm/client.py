@@ -1,5 +1,5 @@
 """
-Provider-agnostic LLM client using LiteLLM for SumWiseAI.
+Provider-agnostic LLM client using LiteLLM for ByteMeSumAI.
 
 This module provides a unified interface for interacting with different LLM
 providers through LiteLLM, with additional error handling and caching.

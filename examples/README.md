@@ -1,10 +1,10 @@
-# SumWiseAI Examples
+# ByteMeSumAI Examples
 
-This directory contains example scripts that demonstrate how to use the SumWiseAI package.
+This directory contains example scripts that demonstrate how to use the ByteMeSumAI package.
 
 ## Prerequisites
 
-Make sure you have SumWiseAI installed:
+Make sure you have ByteMeSumAI installed:
 
 ```bash
 pip install -e ..  # Install from local directory in development mode
@@ -38,7 +38,7 @@ This will:
 
 ### Basic Document Processing
 
-Simple example of using SumWiseAI for basic document processing:
+Simple example of using ByteMeSumAI for basic document processing:
 
 ```bash
 python basic_document_processing.py --document your_document.txt --output output

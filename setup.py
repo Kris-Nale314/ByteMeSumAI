@@ -6,7 +6,7 @@ from setuptools import setup, find_packages
 
 if __name__ == "__main__":
     setup(
-        name="sumwiseai",
+        name="bytemesumai",
         version="0.1.0",
         description="Intelligent document processing with advanced chunking and summarization",
         author="Kris Naleszkiewicz",

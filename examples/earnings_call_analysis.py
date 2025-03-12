@@ -16,11 +16,11 @@ import time
 import argparse
 from typing import Dict, Any, Optional
 
-# Import SumWiseAI
-from sumwiseai.models.document import Document
-from sumwiseai.processing.document import DocumentProcessor
-from sumwiseai.chunking.processor import ChunkingProcessor
-from sumwiseai.summarization.processor import SummarizationProcessor
+# Import ByteMeSumAI modules
+from bytemesumai.models.document import Document
+from bytemesumai.processing.document import DocumentProcessor
+from bytemesumai.chunking.processor import ChunkingProcessor
+from bytemesumai.summarization.processor import SummarizationProcessor
 
 
 def main(transcript_path: str, output_dir: str) -> None:

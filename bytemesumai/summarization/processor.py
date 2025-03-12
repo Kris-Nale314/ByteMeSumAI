@@ -1,5 +1,5 @@
 """
-Processor for document summarization in SumWiseAI.
+Processor for document summarization in ByteMeSumAI.
 
 This module provides the main SummarizationProcessor class that implements
 different document summarization strategies.

@@ -1,5 +1,5 @@
 """
-Document model for SumWiseAI.
+Document model for ByteMeSumAI.
 
 This module defines the Document class, which represents a text document
 with metadata and provides methods for loading and manipulating documents.
@@ -14,7 +14,7 @@ class Document:
     """
     Represents a document with content and metadata.
     
-    This class is the central data model for documents in SumWiseAI,
+    This class is the central data model for documents in ByteMeSumAI,
     providing methods for loading various file formats and accessing content.
     """
     

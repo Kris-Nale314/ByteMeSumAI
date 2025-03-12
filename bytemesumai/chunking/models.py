@@ -1,5 +1,5 @@
 """
-Models for document chunking in SumWiseAI.
+Models for document chunking in ByteMeSumAI.
 
 This module defines data models for document chunks and boundaries.
 """

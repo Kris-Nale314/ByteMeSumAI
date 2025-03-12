@@ -1,5 +1,5 @@
 """
-Markdown reporter for SumWiseAI.
+Markdown reporter for ByteMeSumAI.
 
 This module provides functionality for generating markdown reports from
 document processing results.

@@ -1,5 +1,5 @@
 """
-Document processor for SumWiseAI.
+Document processor for ByteMeSumAI.
 
 This module provides the DocumentProcessor class, which combines chunking and
 summarization to process documents in an intelligent way.
@@ -9,9 +9,9 @@ import logging
 import time
 from typing import List, Dict, Any, Optional, Union
 
-from sumwiseai.models.document import Document
-from sumwiseai.chunking.processor import ChunkingProcessor
-from sumwiseai.summarization.processor import SummarizationProcessor
+from bytemesumai.models.document import Document
+from bytemesumai.chunking.processor import ChunkingProcessor
+from bytemesumai.summarization.processor import SummarizationProcessor
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')

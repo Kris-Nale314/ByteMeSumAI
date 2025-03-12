@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-Basic example of how to use SumWiseAI to process a document.
+Basic example of how to use ByteMeSumAI to process a document.
 
 This example shows the minimal code needed to:
 1. Load a document
@@ -15,11 +15,11 @@ import argparse
 # Add the repo root to the Python path for local development
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-# Import SumWiseAI
+# Import ByteMeSumAI
 
 def main(document_path: str, output_dir: str, summarization_method: str = "basic") -> None:
     """
-    Process a document using SumWiseAI.
+    Process a document using ByteMeSumAI.
     
     Args:
         document_path: Path to the document file

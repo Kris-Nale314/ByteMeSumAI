@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-Simplified example script that demonstrates SumWiseAI's capabilities
+Simplified example script that demonstrates ByteMeSumAI's capabilities
 by analyzing an earnings call transcript from Dell.
 
 This script focuses on core functionality to get started quickly.
@@ -11,9 +11,9 @@ import sys
 import time
 import argparse
 
-# Import SumWiseAI
-from sumwiseai.models.document import Document
-from sumwiseai.processing.document import DocumentProcessor
+# Import ByteMeSumAI
+from bytemesumai.models.document import Document
+from bytemesumai.processing.document import DocumentProcessor
 
 def main(transcript_path, output_dir):
     """Process an earnings call transcript and print results."""

@@ -3,7 +3,7 @@ requires = ["setuptools>=42.0.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "sumwiseai"
+name = "bytemesumai"
 version = "0.1.0"
 description = "Intelligent document processing with advanced chunking and summarization"
 readme = "README.md"
@@ -52,10 +52,10 @@ docs = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/kris-nale314/sumwiseai"
-Documentation = "https://github.com/kris-nale314/sumwiseai#readme"
-Issues = "https://github.com/kris-nale314/sumwiseai/issues"
-Changelog = "https://github.com/kris-nale314/sumwiseai/blob/main/CHANGELOG.md"
+Homepage = "https://github.com/kris-nale314/bytemesumai"
+Documentation = "https://github.com/kris-nale314/bytemesumai#readme"
+Issues = "https://github.com/kris-nale314/bytemesumai/issues"
+Changelog = "https://github.com/kris-nale314/bytemesumai/blob/main/CHANGELOG.md"
 
 [tool.black]
 line-length = 88

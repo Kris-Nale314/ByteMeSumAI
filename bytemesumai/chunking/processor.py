@@ -1,5 +1,5 @@
 """
-Processor for document chunking in SumWiseAI.
+Processor for document chunking in ByteMeSumAI.
 
 This module provides the main ChunkingProcessor class that implements
 different document chunking strategies.
@@ -11,9 +11,9 @@ import nltk
 from typing import List, Dict, Any, Optional, Union, Tuple
 import numpy as np
 
-from sumwiseai.chunking.models import Chunk, DocumentBoundary, ChunkingResult
-from sumwiseai.models.document import Document
-from sumwiseai.llm.client import LLMClient
+from bytemesumai.chunking.models import Chunk, DocumentBoundary, ChunkingResult
+from bytemesumai.models.document import Document
+from bytemesumai.llm.client import LLMClient
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
