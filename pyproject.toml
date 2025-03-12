@@ -1,0 +1,83 @@
+[build-system]
+requires = ["setuptools>=42.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sumwiseai"
+version = "0.1.0"
+description = "Intelligent document processing with advanced chunking and summarization"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Kris Naleszkiewicz", email = "kris.nale@gmail.com"},
+]
+keywords = [
+    "nlp",
+    "summarization",
+    "document-processing",
+    "chunking",
+    "ai",
+    "llm"
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Text Processing :: Linguistic",
+]
+dependencies = [
+    "litellm>=1.2.0",
+    "nltk>=3.7.0",
+    "numpy>=1.20.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "black>=23.1.0",
+    "isort>=5.12.0",
+    "mypy>=1.0.0",
+    "ruff>=0.0.54",
+]
+docs = [
+    "mkdocs>=1.4.0",
+    "mkdocs-material>=8.5.10",
+    "mkdocstrings[python]>=0.19.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/kris-nale314/sumwiseai"
+Documentation = "https://github.com/kris-nale314/sumwiseai#readme"
+Issues = "https://github.com/kris-nale314/sumwiseai/issues"
+Changelog = "https://github.com/kris-nale314/sumwiseai/blob/main/CHANGELOG.md"
+
+[tool.black]
+line-length = 88
+target-version = ["py38"]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+
+[tool.ruff]
+select = [
+    "E",  # pycodestyle errors
+    "F",  # pyflakes
+    "I",  # isort
+]
+ignore = []
+line-length = 88
+target-version = "py38"
