@@ -1,0 +1,58 @@
+site_name: ByteMeSumAI
+site_description: Building Blocks for Robust and Context-Aware Retrieval-Augmented Generation
+site_author: Kris Naleszkiewicz
+site_url: https://github.com/kris-nale314/bytemesumai
+repo_url: https://github.com/kris-nale314/bytemesumai
+
+theme:
+  name: material
+  palette:
+    primary: indigo
+    accent: indigo
+  logo: images/logo.svg
+  favicon: images/logo.svg
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - search.suggest
+    - search.highlight
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          selection:
+            docstring_style: google
+          rendering:
+            show_source: true
+            show_root_heading: true
+
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.details
+
+nav:
+  - Home: index.md
+  - Installation: installation.md
+  - Usage:
+    - Quick Start: usage/quickstart.md
+    - Chunking: usage/chunking.md
+    - Summarization: usage/summarization.md
+    - Document Processing: usage/document-processing.md
+  - API Reference:
+    - Document Model: api/document.md
+    - Chunking: api/chunking.md
+    - Summarization: api/summarization.md
+    - LLM Client: api/llm.md
+    - Document Processor: api/processor.md
+  - Examples:
+    - RAG Integration: examples/rag-integration.md
+    - Entity Tracking: examples/entity-tracking.md
+  - Contributing: contributing.md
+  - Changelog: changelog.md

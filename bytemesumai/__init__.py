@@ -1,14 +1,16 @@
 """
-ByteMeSumAI: Intelligent document processing with advanced chunking and summarization.
+ByteMeSumAI: Building Blocks for Robust and Context-Aware Retrieval-Augmented Generation
 """
 
 __version__ = "0.1.0"
 
-# Import core components for easy access
+# Import core functionality for easy access
 from bytemesumai.models.document import Document
 from bytemesumai.chunking.processor import ChunkingProcessor
-from bytemesumai.chunking.models import Chunk, DocumentBoundary, ChunkingResult
-
+from bytemesumai.summarization.processor import SummarizationProcessor
+from bytemesumai.processing.document import DocumentProcessor
 from bytemesumai.llm.client import LLMClient
 
-from bytemesumai.summarization.processor import SummarizationProcessor
+
+# Import evaluation functions
+#from bytemesumai.evaluation.metrics import evaluate_summary

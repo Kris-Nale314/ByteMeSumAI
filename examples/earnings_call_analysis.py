@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-Example script that demonstrates SumWiseAI's capabilities by analyzing
+Example script that demonstrates ByteMeSumAI's capabilities by analyzing
 an earnings call transcript from Dell.
 
 This script:
@@ -106,9 +106,9 @@ def main(transcript_path: str, output_dir: str) -> None:
     print(f"\nAnalysis saved to: {output_path}")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Process an earnings call transcript with SumWiseAI")
+    parser = argparse.ArgumentParser(description="Process an earnings call transcript with ByteMeSumAI")
     
-    parser.add_argument("--transcript", "-t", type=str, default="examples/data/Dell_Q4_2024_EarningsCall.txt",
+    parser.add_argument("--transcript", "-t", type=str, default="examples/data/DELL_EarningsCall.txt",
                        help="Path to the earnings call transcript file")
     parser.add_argument("--output", "-o", type=str, default="output",
                        help="Directory to save the output report (default: 'output')")

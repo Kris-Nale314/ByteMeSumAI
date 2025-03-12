@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/images/logo.svg" alt="ByteMeSumAI Logo" width="200"/>
+  <img src="docs/images/logo.svg" alt="ByteMeSumAI Logo" width="314"/>
 </p>
 
 
@@ -29,6 +29,40 @@ ByteMeSumAI
 ├── Entity Tracking        # Cross-document entity reference management
 └── Evaluation Framework   # Quantitative assessment of output quality
 ```
+
+## Advanced Summarization Workflow
+
+The workflow diagram (`images/advanced_workflow.svg`) illustrates the detailed process flow in the advanced summarization example:
+
+1. **Phase 1: Boundary Detection**
+   - Detects section headers, paragraph breaks, and format shifts
+   - Identifies natural boundaries in the document structure
+   - Preserves document architecture for smarter processing
+
+2. **Phase 2: Intelligent Chunking**
+   - Applies boundary-aware chunking that respects document structure
+   - Preserves sentences and coherent sections
+   - Produces semantically meaningful document segments
+
+3. **Phase 3: Multi-Strategy Summarization**
+   - Applies different summarization techniques to the same content:
+     - Basic summaries (concise/detailed)
+     - Extractive summaries (important sentences)
+     - Entity-focused summaries (organized by key entities)
+     - Temporal summaries (chronological organization)
+     - Contrastive summaries (comparing different sections/documents)
+
+4. **Phase 4: Quality Evaluation**
+   - Assesses output quality across multiple dimensions:
+     - Completeness: Does it capture key information?
+     - Conciseness: Is it appropriately brief?
+     - Accuracy: Does it preserve factual content?
+     - Coherence: Does it flow logically?
+
+5. **LLM Integration**
+   - Powers intelligence across all phases
+   - Provider-agnostic (works with different LLM backends)
+
 
 ## 🧠 Core Technical Capabilities
 

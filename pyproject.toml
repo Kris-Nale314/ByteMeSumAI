@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "bytemesumai"
 version = "0.1.0"
-description = "Intelligent document processing with advanced chunking and summarization"
+description = "Building Blocks for Robust and Context-Aware Retrieval-Augmented Generation"
 readme = "README.md"
 requires-python = ">=3.8"
 license = {text = "MIT"}
@@ -18,7 +18,8 @@ keywords = [
     "document-processing",
     "chunking",
     "ai",
-    "llm"
+    "llm",
+    "rag"
 ]
 classifiers = [
     "Development Status :: 3 - Alpha",
@@ -53,7 +54,7 @@ docs = [
 
 [project.urls]
 Homepage = "https://github.com/kris-nale314/bytemesumai"
-Documentation = "https://github.com/kris-nale314/bytemesumai#readme"
+Documentation = "https://github.com/kris-nale314/bytemesumai/docs"
 Issues = "https://github.com/kris-nale314/bytemesumai/issues"
 Changelog = "https://github.com/kris-nale314/bytemesumai/blob/main/CHANGELOG.md"
 
