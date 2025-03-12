@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/images/logo.svg" alt="ByteMeSumAI Logo" width="250"/>
+  <img src="https://raw.githubusercontent.com/kris-nale314/bytemesumai/main/docs/images/logo.svg" alt="ByteMeSumAI Logo" width="250"/>
 </p>
 
 <h1 align="center">ByteMeSumAI</h1>
@@ -51,7 +51,7 @@ ByteMeSumAI addresses these issues by preserving document architecture:
 </tr>
 <tr>
 <td colspan="2" align="center">
-<img src="docs/images/advanced_workflow.svg" alt="Advanced Workflow" width="80%"/>
+<img src="https://raw.githubusercontent.com/kris-nale314/bytemesumai/main/docs/images/advanced_workflow.svg" alt="Advanced Workflow" width="80%"/>
 </td>
 </tr>
 </table>
