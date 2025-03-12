@@ -32,7 +32,7 @@ ByteMeSumAI
 
 ## Advanced Summarization Workflow
 
-The workflow diagram (`images/advanced_workflow.svg`) illustrates the detailed process flow in the advanced summarization example:
+The workflow diagram (`docs/images/advanced_workflow.svg`) illustrates the detailed process flow in the advanced summarization example:
 
 1. **Phase 1: Boundary Detection**
    - Detects section headers, paragraph breaks, and format shifts
