@@ -1,0 +1,237 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700">
+  <!-- Definitions for gradients and filters -->
+  <defs>
+    <filter id="shadow" x="-2%" y="-2%" width="104%" height="104%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+    <linearGradient id="headerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3F51B5"/>
+      <stop offset="100%" stop-color="#5C6BC0"/>
+    </linearGradient>
+    <linearGradient id="docGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#78909C"/>
+      <stop offset="100%" stop-color="#90A4AE"/>
+    </linearGradient>
+    <linearGradient id="level1Gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#42A5F5"/>
+      <stop offset="100%" stop-color="#64B5F6"/>
+    </linearGradient>
+    <linearGradient id="level2Gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#66BB6A"/>
+      <stop offset="100%" stop-color="#81C784"/>
+    </linearGradient>
+    <linearGradient id="level3Gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFA726"/>
+      <stop offset="100%" stop-color="#FFB74D"/>
+    </linearGradient>
+    <linearGradient id="level4Gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#EF5350"/>
+      <stop offset="100%" stop-color="#E57373"/>
+    </linearGradient>
+    <linearGradient id="finalGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7E57C2"/>
+      <stop offset="100%" stop-color="#9575CD"/>
+    </linearGradient>
+    
+    <!-- Document texture pattern with text -->
+    <pattern id="docPattern" patternUnits="userSpaceOnUse" width="100" height="100">
+      <rect width="100" height="100" fill="url(#docGradient)"/>
+      <!-- Simulated text lines -->
+      <line x1="10" y1="15" x2="90" y2="15" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+      <line x1="10" y1="25" x2="80" y2="25" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+      <line x1="10" y1="35" x2="90" y2="35" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+      <line x1="10" y1="45" x2="75" y2="45" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+      <line x1="10" y1="55" x2="85" y2="55" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+      <line x1="10" y1="65" x2="90" y2="65" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+      <line x1="10" y1="75" x2="70" y2="75" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+      <line x1="10" y1="85" x2="85" y2="85" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+      <line x1="10" y1="95" x2="80" y2="95" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+    </pattern>
+    
+    <!-- Arrowhead marker -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#555"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <rect x="70" y="20" width="760" height="70" rx="10" fill="url(#headerGradient)" filter="url(#shadow)"/>
+  <text x="450" y="65" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="32" fill="white" text-anchor="middle" font-weight="bold">ByteMeSumAI Hierarchical Processor</text>
+  
+  <!-- Level 1: Original Document -->
+  <rect x="100" y="110" width="700" height="110" rx="10" fill="url(#docPattern)" filter="url(#shadow)"/>
+  <circle cx="75" cy="165" r="15" fill="#333" stroke="white" stroke-width="2"/>
+  <text x="75" y="170" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">1</text>
+  <text x="450" y="140" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="22" fill="white" text-anchor="middle" font-weight="bold">Document for Processing</text>
+  <text x="450" y="170" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="16" fill="white" text-anchor="middle">Books, articles, reports, transcripts, or any text over 5,000 words</text>
+  <text x="450" y="195" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="14" fill="white" text-anchor="middle">Complex structure with sections, entities, and temporal information</text>
+  
+  <!-- Downward Arrow -->
+  <polyline points="450,220 450,260" stroke="#555" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Level 2: Document Segments -->
+  <rect x="140" y="270" width="140" height="80" rx="8" fill="url(#level1Gradient)" filter="url(#shadow)"/>
+  <rect x="300" y="270" width="140" height="80" rx="8" fill="url(#level1Gradient)" filter="url(#shadow)"/>
+  <rect x="460" y="270" width="140" height="80" rx="8" fill="url(#level1Gradient)" filter="url(#shadow)"/>
+  <rect x="620" y="270" width="140" height="80" rx="8" fill="url(#level1Gradient)" filter="url(#shadow)"/>
+  
+  <circle cx="75" cy="305" r="15" fill="#333" stroke="white" stroke-width="2"/>
+  <text x="75" y="310" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">2</text>
+  
+  <text x="210" y="295" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="16" fill="white" text-anchor="middle" font-weight="bold">Section 1</text>
+  <text x="370" y="295" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="16" fill="white" text-anchor="middle" font-weight="bold">Section 2</text>
+  <text x="530" y="295" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="16" fill="white" text-anchor="middle" font-weight="bold">Section i</text>
+  <text x="690" y="295" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="16" fill="white" text-anchor="middle" font-weight="bold">Section n</text>
+  
+  <text x="210" y="320" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">Introduction</text>
+  <text x="370" y="320" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">Literature Review</text>
+  <text x="530" y="320" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">Methodology</text>
+  <text x="690" y="320" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">Conclusion</text>
+  
+  <text x="210" y="335" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">Boundary type: Section</text>
+  <text x="370" y="335" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">Boundary type: Section</text>
+  <text x="530" y="335" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">Boundary type: Section</text>
+  <text x="690" y="335" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">Boundary type: Section</text>
+  
+  <!-- Downward Arrows -->
+  <polyline points="210,350 210,400" stroke="#555" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <polyline points="370,350 370,400" stroke="#555" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <polyline points="530,350 530,400" stroke="#555" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <polyline points="690,350 690,400" stroke="#555" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Level 3: Semantic Chunks - WITH INCREASED SPACING FROM PREVIOUS LEVEL -->
+  <rect x="150" y="410" width="60" height="60" rx="8" fill="url(#level2Gradient)" filter="url(#shadow)"/>
+  <rect x="220" y="410" width="60" height="60" rx="8" fill="url(#level2Gradient)" filter="url(#shadow)"/>
+  
+  <rect x="310" y="410" width="60" height="60" rx="8" fill="url(#level2Gradient)" filter="url(#shadow)"/>
+  <rect x="380" y="410" width="60" height="60" rx="8" fill="url(#level2Gradient)" filter="url(#shadow)"/>
+  
+  <rect x="470" y="410" width="60" height="60" rx="8" fill="url(#level2Gradient)" filter="url(#shadow)"/>
+  <rect x="540" y="410" width="60" height="60" rx="8" fill="url(#level2Gradient)" filter="url(#shadow)"/>
+  
+  <rect x="630" y="410" width="60" height="60" rx="8" fill="url(#level2Gradient)" filter="url(#shadow)"/>
+  <rect x="700" y="410" width="60" height="60" rx="8" fill="url(#level2Gradient)" filter="url(#shadow)"/>
+  
+  <circle cx="75" cy="430" r="15" fill="#333" stroke="white" stroke-width="2"/>
+  <text x="75" y="435" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">3</text>
+  
+  <text x="180" y="435" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="10" fill="white" text-anchor="middle" font-weight="bold">Chunk 1.1</text>
+  <text x="250" y="435" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="10" fill="white" text-anchor="middle" font-weight="bold">Chunk 1.2</text>
+  
+  <text x="340" y="435" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="10" fill="white" text-anchor="middle" font-weight="bold">Chunk 2.1</text>
+  <text x="410" y="435" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="10" fill="white" text-anchor="middle" font-weight="bold">Chunk 2.2</text>
+  
+  <text x="500" y="435" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="10" fill="white" text-anchor="middle" font-weight="bold">Chunk i.1</text>
+  <text x="570" y="435" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="10" fill="white" text-anchor="middle" font-weight="bold">Chunk i.2</text>
+  
+  <text x="660" y="435" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="10" fill="white" text-anchor="middle" font-weight="bold">Chunk n.1</text>
+  <text x="730" y="435" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="10" fill="white" text-anchor="middle" font-weight="bold">Chunk n.2</text>
+  
+  <!-- Add semantic labels to chunks -->
+  <text x="180" y="450" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="8" fill="white" text-anchor="middle">Semantic unit</text>
+  <text x="250" y="450" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="8" fill="white" text-anchor="middle">Semantic unit</text>
+  <text x="340" y="450" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="8" fill="white" text-anchor="middle">Semantic unit</text>
+  <text x="410" y="450" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="8" fill="white" text-anchor="middle">Semantic unit</text>
+  <text x="500" y="450" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="8" fill="white" text-anchor="middle">Semantic unit</text>
+  <text x="570" y="450" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="8" fill="white" text-anchor="middle">Semantic unit</text>
+  <text x="660" y="450" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="8" fill="white" text-anchor="middle">Semantic unit</text>
+  <text x="730" y="450" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="8" fill="white" text-anchor="middle">Semantic unit</text>
+  
+  <!-- Downward Arrows -->
+  <polyline points="180,470 180,520" stroke="#555" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <polyline points="250,470 250,520" stroke="#555" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <polyline points="340,470 340,520" stroke="#555" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <polyline points="410,470 410,520" stroke="#555" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <polyline points="500,470 500,520" stroke="#555" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <polyline points="570,470 570,520" stroke="#555" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <polyline points="660,470 660,520" stroke="#555" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <polyline points="730,470 730,520" stroke="#555" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Level 4: Chunk Summaries - WITH INCREASED SPACING FROM PREVIOUS LEVEL -->
+  <rect x="155" y="530" width="50" height="50" rx="8" fill="url(#level3Gradient)" filter="url(#shadow)"/>
+  <rect x="225" y="530" width="50" height="50" rx="8" fill="url(#level3Gradient)" filter="url(#shadow)"/>
+  
+  <rect x="315" y="530" width="50" height="50" rx="8" fill="url(#level3Gradient)" filter="url(#shadow)"/>
+  <rect x="385" y="530" width="50" height="50" rx="8" fill="url(#level3Gradient)" filter="url(#shadow)"/>
+  
+  <rect x="475" y="530" width="50" height="50" rx="8" fill="url(#level3Gradient)" filter="url(#shadow)"/>
+  <rect x="545" y="530" width="50" height="50" rx="8" fill="url(#level3Gradient)" filter="url(#shadow)"/>
+  
+  <rect x="635" y="530" width="50" height="50" rx="8" fill="url(#level3Gradient)" filter="url(#shadow)"/>
+  <rect x="705" y="530" width="50" height="50" rx="8" fill="url(#level3Gradient)" filter="url(#shadow)"/>
+  
+  <circle cx="75" cy="555" r="15" fill="#333" stroke="white" stroke-width="2"/>
+  <text x="75" y="560" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">4</text>
+  
+  <text x="180" y="555" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="9" fill="white" text-anchor="middle" font-weight="bold">Summary 1.1</text>
+  <text x="250" y="555" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="9" fill="white" text-anchor="middle" font-weight="bold">Summary 1.2</text>
+  
+  <text x="340" y="555" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="9" fill="white" text-anchor="middle" font-weight="bold">Summary 2.1</text>
+  <text x="410" y="555" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="9" fill="white" text-anchor="middle" font-weight="bold">Summary 2.2</text>
+  
+  <text x="500" y="555" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="9" fill="white" text-anchor="middle" font-weight="bold">Summary i.1</text>
+  <text x="570" y="555" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="9" fill="white" text-anchor="middle" font-weight="bold">Summary i.2</text>
+  
+  <text x="660" y="555" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="9" fill="white" text-anchor="middle" font-weight="bold">Summary n.1</text>
+  <text x="730" y="555" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="9" fill="white" text-anchor="middle" font-weight="bold">Summary n.2</text>
+  
+  <!-- Add summarization strategy hints -->
+  <text x="180" y="570" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="7" fill="white" text-anchor="middle">Extractive</text>
+  <text x="250" y="570" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="7" fill="white" text-anchor="middle">Entity-focused</text>
+  <text x="340" y="570" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="7" fill="white" text-anchor="middle">Temporal</text>
+  <text x="410" y="570" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="7" fill="white" text-anchor="middle">Extractive</text>
+  <text x="500" y="570" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="7" fill="white" text-anchor="middle">Entity-focused</text>
+  <text x="570" y="570" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="7" fill="white" text-anchor="middle">Temporal</text>
+  <text x="660" y="570" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="7" fill="white" text-anchor="middle">Extractive</text>
+  <text x="730" y="570" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="7" fill="white" text-anchor="middle">Entity-focused</text>
+  
+  <!-- IMPROVED: Single Converging Arrows for each pair of summaries -->
+  <path d="M180,580 C180,590 215,600 215,600" stroke="#555" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M250,580 C250,590 215,600 215,600" stroke="#555" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <path d="M340,580 C340,590 375,600 375,600" stroke="#555" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M410,580 C410,590 375,600 375,600" stroke="#555" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <path d="M500,580 C500,590 535,600 535,600" stroke="#555" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M570,580 C570,590 535,600 535,600" stroke="#555" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <path d="M660,580 C660,590 695,600 695,600" stroke="#555" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M730,580 C730,590 695,600 695,600" stroke="#555" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Level 5: Section Summaries - MOVED CLOSER TO CENTER FOR FUNNEL EFFECT -->
+  <rect x="180" y="610" width="70" height="40" rx="8" fill="url(#level4Gradient)" filter="url(#shadow)"/>
+  <rect x="340" y="610" width="70" height="40" rx="8" fill="url(#level4Gradient)" filter="url(#shadow)"/>
+  <rect x="500" y="610" width="70" height="40" rx="8" fill="url(#level4Gradient)" filter="url(#shadow)"/>
+  <rect x="650" y="610" width="70" height="40" rx="8" fill="url(#level4Gradient)" filter="url(#shadow)"/>
+  
+  <circle cx="75" cy="630" r="15" fill="#333" stroke="white" stroke-width="2"/>
+  <text x="75" y="635" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">5</text>
+  
+  <text x="215" y="625" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">Section 1</text>
+  <text x="375" y="625" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">Section 2</text>
+  <text x="535" y="625" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">Section i</text>
+  <text x="685" y="625" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">Section n</text>
+  
+  <text x="215" y="640" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="8" fill="white" text-anchor="middle">Integrated summary</text>
+  <text x="375" y="640" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="8" fill="white" text-anchor="middle">Integrated summary</text>
+  <text x="535" y="640" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="8" fill="white" text-anchor="middle">Integrated summary</text>
+  <text x="685" y="640" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="8" fill="white" text-anchor="middle">Integrated summary</text>
+  
+  <!-- IMPROVED: Final Converging Arrows with more funnel-like appearance -->
+  <path d="M215,650 C215,660 375,670 450,670" stroke="#555" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M375,650 C375,660 425,670 450,670" stroke="#555" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M535,650 C535,660 475,670 450,670" stroke="#555" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M685,650 C685,660 525,670 450,670" stroke="#555" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Level 6: Final Complete Summary -->
+  <circle cx="75" cy="680" r="15" fill="#333" stroke="white" stroke-width="2"/>
+  <text x="75" y="685" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">6</text>
+  
+  <!-- Final Document Summary (25% of original document size) - CENTERED -->
+  <rect x="350" y="680" width="200" height="50" rx="8" fill="url(#finalGradient)" stroke="white" stroke-width="2" filter="url(#shadow)"/>
+  <text x="450" y="700" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="16" fill="white" text-anchor="middle" font-weight="bold">Context-Aware Summary</text>
+  <text x="450" y="720" font-family="Segoe UI, Tenorite, Arial, sans-serif" font-size="9" fill="white" text-anchor="middle">Entity relationships, temporal coherence, causal links preserved</text>
+</svg>

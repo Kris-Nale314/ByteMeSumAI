@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <!-- Background and styling -->
+  <defs>
+    <filter id="shadow" x="-2%" y="-2%" width="104%" height="104%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+    <linearGradient id="headerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4051B5"/>
+      <stop offset="100%" stop-color="#7986CB"/>
+    </linearGradient>
+    <linearGradient id="docGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#81D4FA"/>
+      <stop offset="100%" stop-color="#4FC3F7"/>
+    </linearGradient>
+    <linearGradient id="chunkGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#AED581"/>
+      <stop offset="100%" stop-color="#8BC34A"/>
+    </linearGradient>
+    <linearGradient id="sumGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFD54F"/>
+      <stop offset="100%" stop-color="#FFCA28"/>
+    </linearGradient>
+    <linearGradient id="evalGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF8A65"/>
+      <stop offset="100%" stop-color="#FF7043"/>
+    </linearGradient>
+    <linearGradient id="llmGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9575CD"/>
+      <stop offset="100%" stop-color="#7E57C2"/>
+    </linearGradient>
+    <linearGradient id="arrowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#B0BEC5"/>
+      <stop offset="100%" stop-color="#90A4AE"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Title -->
+  <rect x="270" y="20" width="360" height="60" rx="10" fill="url(#headerGradient)" filter="url(#shadow)"/>
+  <text x="450" y="60" font-family="Arial, sans-serif" font-size="24" fill="white" text-anchor="middle" font-weight="bold">ByteMeSumAI Architecture</text>
+  
+  <!-- Document Processor (Central Component) -->
+  <rect x="350" y="250" width="200" height="80" rx="10" fill="url(#headerGradient)" filter="url(#shadow)"/>
+  <text x="450" y="280" font-family="Arial, sans-serif" font-size="20" fill="white" text-anchor="middle">Document</text>
+  <text x="450" y="305" font-family="Arial, sans-serif" font-size="20" fill="white" text-anchor="middle">Processor</text>
+  <text x="450" y="345" font-family="Arial, sans-serif" font-size="14" fill="#555" text-anchor="middle">Orchestrates All Components</text>
+  
+  <!-- Document Model -->
+  <rect x="100" y="150" width="160" height="80" rx="10" fill="url(#docGradient)" filter="url(#shadow)"/>
+  <text x="180" y="195" font-family="Arial, sans-serif" font-size="18" fill="#333" text-anchor="middle">Document Model</text>
+  <circle cx="120" cy="170" r="15" fill="#333" stroke="white" stroke-width="2"/>
+  <text x="120" y="175" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">1</text>
+  
+  <!-- Chunking Engine -->
+  <rect x="100" y="350" width="160" height="80" rx="10" fill="url(#chunkGradient)" filter="url(#shadow)"/>
+  <text x="180" y="395" font-family="Arial, sans-serif" font-size="18" fill="#333" text-anchor="middle">Chunking Engine</text>
+  <circle cx="120" cy="370" r="15" fill="#333" stroke="white" stroke-width="2"/>
+  <text x="120" y="375" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">2</text>
+  
+  <!-- Summarization Engine -->
+  <rect x="640" y="150" width="160" height="80" rx="10" fill="url(#sumGradient)" filter="url(#shadow)"/>
+  <text x="720" y="180" font-family="Arial, sans-serif" font-size="18" fill="#333" text-anchor="middle">Summarization</text>
+  <text x="720" y="205" font-family="Arial, sans-serif" font-size="18" fill="#333" text-anchor="middle">Engine</text>
+  <circle cx="680" cy="170" r="15" fill="#333" stroke="white" stroke-width="2"/>
+  <text x="680" y="175" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">3</text>
+  
+  <!-- Evaluation Framework -->
+  <rect x="640" y="350" width="160" height="80" rx="10" fill="url(#evalGradient)" filter="url(#shadow)"/>
+  <text x="720" y="380" font-family="Arial, sans-serif" font-size="18" fill="#333" text-anchor="middle">Evaluation</text>
+  <text x="720" y="405" font-family="Arial, sans-serif" font-size="18" fill="#333" text-anchor="middle">Framework</text>
+  <circle cx="680" cy="370" r="15" fill="#333" stroke="white" stroke-width="2"/>
+  <text x="680" y="375" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">4</text>
+  
+  <!-- LLM Client -->
+  <rect x="350" y="450" width="200" height="80" rx="10" fill="url(#llmGradient)" filter="url(#shadow)"/>
+  <text x="450" y="495" font-family="Arial, sans-serif" font-size="18" fill="white" text-anchor="middle">LLM Client</text>
+  <circle cx="390" cy="470" r="15" fill="#333" stroke="white" stroke-width="2"/>
+  <text x="390" y="475" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">5</text>
+  
+  <!-- Connection Arrows -->
+  <!-- Document Model to Document Processor -->
+  <path d="M260 190 L350 250" stroke="#555" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Document Processor to Chunking Engine -->
+  <path d="M350 290 L260 360" stroke="#555" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Document Processor to Summarization Engine -->
+  <path d="M550 250 L640 190" stroke="#555" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Document Processor to Evaluation Framework -->
+  <path d="M550 290 L640 360" stroke="#555" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Bidirectional arrows for LLM Client -->
+  <path d="M450 330 L450 450" stroke="#555" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M180 430 C180 480 260 500 350 490" stroke="#555" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M720 430 C720 480 640 500 550 490" stroke="#555" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arrowhead marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#555"/>
+    </marker>
+  </defs>
+  
+  <!-- Key Component Descriptions -->
+  <text x="180" y="230" font-family="Arial, sans-serif" font-size="12" fill="#333" text-anchor="middle">Document & Metadata</text>
+  <text x="180" y="430" font-family="Arial, sans-serif" font-size="12" fill="#333" text-anchor="middle">Boundary-Aware Chunking</text>
+  <text x="720" y="230" font-family="Arial, sans-serif" font-size="12" fill="#333" text-anchor="middle">Multi-Strategy Summarization</text>
+  <text x="720" y="430" font-family="Arial, sans-serif" font-size="12" fill="#333" text-anchor="middle">Quality Metrics & Analysis</text>
+  <text x="450" y="525" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">Provider-Agnostic Interface</text>
+  
+  <!-- External Systems -->
+  <rect x="75" y="525" width="120" height="50" rx="8" stroke="#555" stroke-width="2" fill="#f0f0f0" filter="url(#shadow)"/>
+  <text x="135" y="555" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle">Input Documents</text>
+  
+  <rect x="705" y="525" width="120" height="50" rx="8" stroke="#555" stroke-width="2" fill="#f0f0f0" filter="url(#shadow)"/>
+  <text x="765" y="555" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle">RAG Systems</text>
+  
+  <!-- External Connections -->
+  <path d="M135 525 L135 430" stroke="#555" stroke-width="2" stroke-dasharray="5,5" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M765 525 L765 430" stroke="#555" stroke-width="2" stroke-dasharray="5,5" fill="none" marker-end="url(#arrowhead)"/>
+</svg>
