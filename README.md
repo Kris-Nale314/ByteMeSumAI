@@ -51,7 +51,7 @@ ByteMeSumAI addresses these issues by preserving document architecture:
 </tr>
 <tr>
 <td colspan="2" align="center">
-<img src="https://raw.githubusercontent.com/kris-nale314/bytemesumai/main/docs/images/advanced_workflow.svg" alt="Advanced Workflow" width="80%"/>
+<img src="https://raw.githubusercontent.com/kris-nale314/bytemesumai/main/docs/images/architecture.svg" alt="ByteMeSumAI Architecture" width="80%"/>
 </td>
 </tr>
 </table>
